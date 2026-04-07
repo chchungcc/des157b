@@ -23,6 +23,7 @@
                 listimg[i].setAttribute('src', 'images/sparkle-list.png')
                 list[i].style.color = 'white';
                 list[i].style.fontSize = '16px';
+                list[i].className = 'spacehover';
             };
 
             //change section gradient
@@ -58,6 +59,7 @@
                 listimg[i].setAttribute('src', 'images/drop-list.png')
                 list[i].style.color = 'rgb(0, 114, 114)';
                 list[i].style.fontSize = '14px';
+                list[i].className = 'oceanhover';
             };
 
             //change section gradient

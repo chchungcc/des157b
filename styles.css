@@ -131,6 +131,20 @@ ul li img{
     margin-right: 3px;
 }
 
+/* ocean hover */
+ul li a:hover {
+    color: rgb(0, 178, 178);
+}
+
+.oceanhover:hover{
+    color: rgb(0, 178, 178) !important;
+}
+/* 
+space hover */
+.spacehover:hover{
+    color: rgb(225, 189, 255) !important;
+}
+
 section{
     background-image: url(images/ocean-gradient.png);
     background-size: cover;
@@ -163,8 +177,6 @@ section{
     left: 171px;
     top: 224px;
 
-    opacity: 0;
-
     animation: pop 3.5s ease-in-out infinite;
 }
 
@@ -177,17 +189,32 @@ section{
     animation: pop 4s ease-in-out infinite;
 }
 
-/* @keyframes pop{
-    0%{
-        transform: scale(1);
-        opacity: 1;
-    };
+#bigblue{
+    width: 8%;
+    position: absolute;
+    left: 1102px;
+    top: 123px;
 
-    100%{
-        transform: scale(2);
-        opacity: 0;
-    };
-} */
+    animation: pop 3s ease-in-out infinite;
+}
+
+#medblue{
+    width: 5%;
+    position: absolute;
+    left: 1018px;
+    top: 87px;
+
+    animation: pop 3.5s ease-in-out infinite;
+}
+
+#smallblue{
+    width: 3%;
+    position: absolute;
+    left: 1012px;
+    top: 20px;
+
+    animation: pop 4s ease-in-out infinite;
+}
 
 @keyframes pop {
   0% {
@@ -203,4 +230,3 @@ section{
     opacity: 0;          
   }
 }
-
