@@ -4,6 +4,10 @@ h1, h2, h3, p, ul, li, img{
     padding: 0;
 }
 
+button{
+    all: unset;
+}
+
 ul{
     list-style-type: none;
 }
@@ -17,23 +21,29 @@ header{
     font-family: "Comfortaa", sans-serif;
     font-weight: 400;
     font-style: normal;
-    color:white;
+    
+    color:rgb(0, 114, 114);
 }
 
 main{
     font-family: "Comfortaa", sans-serif;
     font-weight: 400;
     font-style: normal;
-    color: white;
+    
+    color: rgb(0, 114, 114);
 }
 
 li a {
-    color: white;
+    color: rgb(0, 114, 114);
 }
 
 /* setups */
 body{
-    background-color: rgb(119, 119, 119);
+    background: #e2fffd;
+    /* background: radial-gradient(circle,rgba(42, 123, 155, 1) 0%, rgba(87, 199, 154, 1) 53%, rgba(247, 255, 179, 1) 100%); */
+    background-image: url(images/ocean-background.png);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 header, main{
@@ -44,22 +54,62 @@ header, main{
 /* header */
 header{
     padding: 30px;
+    height: 250px;
+    position: relative;
+    z-index: 1;
 }
 
 .headingtop{
     display: flex;
     justify-content: space-between;
-}
+
+    margin-top: 10px;
+} 
 
 .headingbottom{
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    margin: 30px;
 }
 
+.headingbottom h1{
+    font-size: 96px;
+}
+
+.headingbottom h2{
+    font-size: 40px;
+}
+
+/* .button{
+    position: relative;
+}
+
+.circle{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: aqua;
+}
+
+#switch{
+    position: absolute;
+    border-radius: 30px;
+    width: 64px;
+    height: 30px;
+    border: 0px;
+} */
+
 /* main */
+#toolkit{
+    margin-top: 20px;
+}
+
 main{
     padding: 30px;
+    position: relative;
+    z-index: 1;
 }
 
 .content{
@@ -69,5 +119,88 @@ main{
 
 .content section{
     flex: 1;
-    background-color: blue;
+    padding: 20px;
 }
+
+ul li{
+    font-size: 14px;
+    margin: 10px 5px;
+}
+
+ul li img{
+    margin-right: 3px;
+}
+
+section{
+    background-image: url(images/ocean-gradient.png);
+    background-size: cover;
+
+    border-radius: 20px;
+    border: solid 1px rgb(0, 114, 114, 0.9);
+    box-shadow: 0px 3px 5px 0 rgb(0, 147, 154, 0.5);
+}
+
+/* decorative */
+.oceancircles{
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#biggreen{
+    width: 9%;
+    position: absolute;
+    left: 59px;
+    top: 124px;
+
+    animation: pop 3s ease-in-out infinite;
+}
+
+#medgreen{
+    width: 6%;
+    position: absolute;
+    left: 171px;
+    top: 224px;
+
+    opacity: 0;
+
+    animation: pop 3.5s ease-in-out infinite;
+}
+
+#smallgreen{
+    width: 3%;
+    position: absolute;
+    left: 265px;
+    top: 201px;
+
+    animation: pop 4s ease-in-out infinite;
+}
+
+/* @keyframes pop{
+    0%{
+        transform: scale(1);
+        opacity: 1;
+    };
+
+    100%{
+        transform: scale(2);
+        opacity: 0;
+    };
+} */
+
+@keyframes pop {
+  0% {
+    transform: scale(0.5);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(0.8);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;          
+  }
+}
+
