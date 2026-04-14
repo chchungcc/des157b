@@ -1,0 +1,70 @@
+
+main{
+    max-width: 1200px;
+    margin: auto;
+    background-color: #292929;
+}
+
+p{
+    font-family: "Cormorant Garamond", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: italic;
+
+    font-size: 1.15em;
+}
+
+.mainvideo{
+    position: relative;
+    padding-top: 10px;
+}
+
+#film{
+    position: relative;
+    z-index: 1;
+}
+
+#water1{
+    position: absolute;
+    z-index: 0;
+
+    left: 118px;
+    top: 32px;
+
+    width: 970px;
+    height: 680px;
+
+    object-fit: cover;
+}
+
+.poem{
+}
+
+.poem p{
+    position: absolute;
+    z-index: 2;
+
+    background-color: white;
+    padding: 5px 10px;
+}
+
+.line1{
+    top: 100px;
+    left: 200px;
+}
+
+.line2{
+    top: 150px;
+    left: 250px;
+}
+
+.line3{
+    top: 230px;
+    left: 790px;
+}
+
+.line4{
+    top: 270px;
+    left: 740px;
+}
+

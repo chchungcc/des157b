@@ -8,13 +8,38 @@
     <!-- normalization -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
 
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500&display=swap" rel="stylesheet">
+
     <!-- style sheet -->
     <link href="styles.css" rel="stylesheet">
 
     <!-- javascript -->
      <script src="script.js" defer></script>
 </head>
+
 <body>
+    <main>
+        <div class="mainvideo">
+            <div class="poem">
+                <p class="line1">I wonder,</p>
+                <p class="line2">what kind of dreams did you have?</p>
+                <p class="line3">Was this the life you wanted?</p>
+                <p class="line4">Were you happy?</p>
+            </div>
+
+            <video id="water1" muted autoplay loop playsinline>
+                <source src="media/water1.webm" type="video/webm">
+                <source src="media/water1.mp4" type="video/mp4">
+
+                <p>Your browser doesn't support HTML5 video. Here is a <a href="media/water1.mp4">link</a> to the video instead.</p>
+            </video>
+
+            <img src="media/film-frame.png" alt="film frame" id="film">
+        </div>
+    </main>
     
 </body>
 </html>
