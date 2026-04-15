@@ -1,8 +1,13 @@
 
+body{
+    background-image: url(media/background.JPG);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 main{
     max-width: 1200px;
     margin: auto;
-    background-color: #292929;
 }
 
 p{
@@ -24,12 +29,12 @@ p{
     z-index: 1;
 }
 
-#water1{
+#blockbuster{
     position: absolute;
     z-index: 0;
 
     left: 118px;
-    top: 32px;
+    top: 42px;
 
     width: 970px;
     height: 680px;
@@ -44,7 +49,9 @@ p{
     position: absolute;
     z-index: 2;
 
-    background-color: white;
+    display: none;
+
+    background-color: rgb(255, 255, 255);
     padding: 5px 10px;
 }
 
@@ -55,7 +62,7 @@ p{
 
 .line2{
     top: 150px;
-    left: 250px;
+    left: 350px;
 }
 
 .line3{
@@ -64,7 +71,91 @@ p{
 }
 
 .line4{
-    top: 270px;
+    top: 280px;
     left: 740px;
 }
 
+.hidden{
+
+}
+
+.showing{
+
+}
+
+.bubble1{
+    position: absolute;
+    z-index: 2;
+
+    left: 460px;
+    top: 600px;
+    
+    animation: floating 4.5s infinite alternate;
+}
+
+.pause{
+    animation-play-state: paused;
+}
+
+.bubble2{
+    position: absolute;
+    z-index: 2;
+
+    left: 850px;
+    top: 500px;
+
+    animation: floating 5s infinite alternate;
+}
+
+.bubble3{
+    position: absolute;
+    z-index: 2;
+
+    left: 200px;
+    top: 450px;
+
+    animation: floating 4s infinite alternate;
+   
+}
+
+.popping{
+    animation: pop 2s ease-in-out forwards;
+}
+
+@keyframes floating{
+    from{transform: translate(0);}
+    to{transform: translateY(-100px);}
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;          
+  }
+}
+
+/* @keyframes floating {
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translate(20px, -30px);
+  }
+  50%{
+    transform: translate(60px, 20px);
+  }
+  75%{
+    transform: translate(80px, -50px);
+  }
+  100%{
+    transform: translate(130px, 40px);
+  }
+} */
