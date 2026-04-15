@@ -1,4 +1,3 @@
-
 body{
     background-image: url(media/background.JPG);
     background-size: cover;
@@ -42,9 +41,6 @@ p{
     object-fit: cover;
 }
 
-.poem{
-}
-
 .poem p{
     position: absolute;
     z-index: 2;
@@ -73,14 +69,6 @@ p{
 .line4{
     top: 280px;
     left: 740px;
-}
-
-.hidden{
-
-}
-
-.showing{
-
 }
 
 .bubble1{
