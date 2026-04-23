@@ -1,0 +1,97 @@
+/* resets */
+p{
+    padding: 0;
+    margin: 0;
+}
+
+/* fonts */
+p, h1{
+    font-family: "Schoolbell", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 28px;
+    color:rgba(51, 51, 51, 0.8);
+}
+
+/* notebook */
+body {
+    background-color: rgb(255, 236, 209);
+    overflow-y: hidden;
+}
+
+
+.notebook {
+    position: relative;
+    display: inline-block;
+
+    margin-left: 50px;
+    margin-top: 30px;
+}
+
+#page{
+    position: relative;
+    filter: drop-shadow(-4px 4px 3px rgba(77, 77, 77, 0.5));
+}
+
+h1{
+    position: absolute;
+    z-index: 1;
+
+    font-size: 36px;
+    color:rgb(0, 67, 183, 0.8);
+    left: 320px;
+    top: 40px;
+}
+
+.dates{
+    position: absolute;
+    z-index: 1;
+    top: 180px;
+    left: 170px;
+}
+
+.dates p{
+    margin-bottom: 10.5px;
+    padding-left: 15px;
+}
+
+.dates p:hover{
+    background-color: rgb(255, 236, 153, 0.5);
+}
+
+#catdoodle1{
+    position: absolute;
+    top: 250px;
+    left: 510px;
+}
+
+.cats p{
+    color: rgb(229, 0, 27, 0.8);
+    margin-top: 10px;
+}
+
+.number{
+    border: 3px solid rgb(229, 0, 27, 0.8);
+    border-radius: 100%;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+
+    position: absolute;
+    z-index:1;
+
+    top: 250px;
+    left: 700px;
+}
+
+/* stationery */
+.stationery{
+}
+
+.stationery #pencil{
+    position: absolute;
+    filter: drop-shadow(-4px 4px 3px rgba(77, 77, 77, 0.5));
+    transform: rotate(-10deg);
+    top: 450px;
+    left: 750px;
+}
