@@ -15,7 +15,9 @@ p, h1{
 
 /* notebook */
 body {
-    background-color: rgb(255, 236, 209);
+    background-color: rgb(255, 234, 203);
+    background-image: url(images/table.jpg);
+    background-size: cover;
     overflow-y: hidden;
 }
 
@@ -30,7 +32,7 @@ body {
 
 #page{
     position: relative;
-    filter: drop-shadow(-4px 4px 3px rgba(77, 77, 77, 0.5));
+    filter: drop-shadow(-4px 2px 3px rgba(77, 77, 77, 0.5));
 }
 
 h1{
@@ -38,31 +40,65 @@ h1{
     z-index: 1;
 
     font-size: 36px;
-    color:rgb(0, 67, 183, 0.8);
-    left: 320px;
-    top: 40px;
+    color:rgba(255, 0, 55, 0.8);
+    left: 195px;
+    top: 30px;
 }
 
 .dates{
     position: absolute;
     z-index: 1;
-    top: 180px;
-    left: 170px;
+    top: 140px;
+    left: 140px;
 }
 
 .dates p{
-    margin-bottom: 10.5px;
+    margin-bottom: 1.7px;
     padding-left: 15px;
 }
+    
+.jan:hover{
+    background-color: rgb(255, 236, 153, 0.5);
+}
 
-.dates p:hover{
+.highlighted{
     background-color: rgb(255, 236, 153, 0.5);
 }
 
 #catdoodle1{
     position: absolute;
-    top: 250px;
+    top: 290px;
     left: 510px;
+}
+
+#catdoodle2{
+    position: absolute;
+    top: 180px;
+    left: 350px;
+}
+
+#catdoodle3{
+    position: absolute;
+    top: 150px;
+    left: 600px;
+}
+
+#catdoodle4{
+    position: absolute;
+    top: 450px;
+    left: 510px;
+}
+
+#catdoodle5{
+    position: absolute;
+    top: 350px;
+    left: 350px;
+}
+
+#catdoodle6{
+    position: absolute;
+    top: 350px;
+    left: 650px;
 }
 
 .cats p{
@@ -80,18 +116,33 @@ h1{
     position: absolute;
     z-index:1;
 
-    top: 250px;
+    top: 180px;
     left: 700px;
 }
 
 /* stationery */
-.stationery{
+.stationery #number{
+    font-size: 60px;
+    text-align: center;
+    position: absolute;
+    z-index: 2;
+    top: 225px;
+    left: 900px;
+    transform: rotate(20deg);
 }
 
 .stationery #pencil{
     position: absolute;
-    filter: drop-shadow(-4px 4px 3px rgba(77, 77, 77, 0.5));
+    filter: drop-shadow(-4px 2px 3px rgba(77, 77, 77, 0.5));
     transform: rotate(-10deg);
     top: 450px;
     left: 750px;
+}
+
+.stationery #postit{
+    position: absolute;
+    filter: drop-shadow(-4px 2px 3px rgba(77, 77, 77, 0.5));
+    transform: rotate(20deg);
+    top: 150px;
+    left: 800px;
 }
