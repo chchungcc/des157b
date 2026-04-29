@@ -32,7 +32,6 @@
         let catImages = '';
         let list = shuffleCats();
 
-        // Loop exactly 'num' times
         for (let i = 0; i < num; i++) {
             catImages += `<img src="images/${list[i]}" id="catdoodle${i+1}" alt="cat" width="100">`;
         }
@@ -43,7 +42,8 @@
     function shuffleCats(){
         const catList = ['catdoodle1.png', 'catdoodle2.png', 'catdoodle3.png', 'catdoodle4.png', 'catdoodle5.png', 'catdoodle6.png', 'catdoodle7.png', 'catdoodle8.png', 'catdoodle9.png'];
 
-        for (let i = catList.length -1; i > 0; i--) {
+        //fisher yates method
+        for (let i = catList.length-1; i > 0; i--) {
             let j = Math.floor(Math.random() * (i+1));
             let k = catList[i];
             catList[i] = catList[j];
