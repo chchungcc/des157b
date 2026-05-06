@@ -1,0 +1,91 @@
+/* setup */
+body{
+    background-color: rgb(255, 244, 222);
+    max-width: 1200px;
+    height: 750px;
+    margin: auto;
+    overflow:hidden;
+}
+
+p{
+    font-size: 20px;
+    font-family: "Intel One Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+    color: #3E3E3E;
+    background-clip: text;
+
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    top: 220px;
+
+}
+
+/* ticket */
+#animated-ticket{
+    margin: auto;
+
+    position: relative;
+    width: fit-content;
+    height: fit-content;
+    
+    z-index: 2;
+    top:200px;
+}
+
+#ticket{
+    position: relative;
+    filter: drop-shadow(0px 3px 2px rgba(106, 106, 106, 0.5));
+}
+
+/* gradients */
+#granim-ticket{
+    position: absolute;
+    width: 700px;
+    height: 100px;
+    top: 20px;
+}
+
+/* characters */
+#character1, #character2, #character3{
+    position: relative;
+    width: fit-content;
+    height: fit-content;
+    z-index: 1;
+
+    top: -300px;
+    left: 60px;
+}
+
+#character4, #character5, #character6{
+    position: relative;
+    width: fit-content;
+    height: fit-content;
+    z-index: 1;
+
+    top: -700px;
+    left: 1010px;
+}
+
+#granim-character1, #granim-character2, #granim-character3, #granim-character4, #granim-character5, #granim-character6{
+    position: relative;
+    display: block;
+    top: 2px;
+    left: 2px;
+    width: 124px;
+    height: 180px;
+
+}
+
+#block1, #block2, #block3, #block4, #block5, #block6{
+    position: absolute;
+    width: 128px;
+    height: 184px;
+    top: 0;
+    left:0;
+    background-image: url(images/spring.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
