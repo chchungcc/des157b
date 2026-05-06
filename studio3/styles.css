@@ -18,7 +18,7 @@ p{
     text-align: center;
     position: relative;
     z-index: 2;
-    top: 220px;
+    top: 250px;
 
 }
 
@@ -31,7 +31,7 @@ p{
     height: fit-content;
     
     z-index: 2;
-    top:200px;
+    top:230px;
 }
 
 #ticket{

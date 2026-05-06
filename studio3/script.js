@@ -2,6 +2,18 @@
     'use strict';
     console.log('js working');
 
+    gsap.registerPlugin(SplitText);
+
+    let split = SplitText.create(".text",{
+        type: "chars, words"
+    });
+
+    gsap.from(split.chars,{
+        y:100,
+        autoAlpha:0,
+        stagger: 0.05
+    })
+
     var granimInstance0 = new Granim({
         element: '#granim-ticket',
         direction: 'diagonal',
