@@ -4,7 +4,11 @@ body{
     max-width: 1200px;
     height: 750px;
     margin: auto;
-    overflow:hidden;
+    /* overflow:hidden; */
+}
+
+main{
+    height: 750px;
 }
 
 p{
@@ -89,3 +93,14 @@ p{
     background-size: contain;
 }
 
+/* footer */
+.footer{
+    position: relative;
+    top: -730px;
+    font-size: 12px;
+}
+
+.footer a{
+    text-decoration: none;
+    color: rgb(192, 140, 105);
+}
