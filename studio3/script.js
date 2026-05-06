@@ -2,6 +2,7 @@
     'use strict';
     console.log('js working');
 
+    //gsap
     gsap.registerPlugin(SplitText);
 
     let split = SplitText.create(".text",{
@@ -14,6 +15,7 @@
         stagger: 0.05
     })
 
+    //granim.js
     var granimInstance0 = new Granim({
         element: '#granim-ticket',
         direction: 'diagonal',
