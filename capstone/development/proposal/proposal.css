@@ -1,0 +1,38 @@
+h1, h2, p{
+    margin:0;
+    padding:0;
+    color: rgb(60, 60, 60);
+}
+
+h1{
+    font-family: "Google Sans", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-variation-settings: "GRAD" 0;
+
+    margin: 20px 0;
+}
+
+h2{
+    font-family: "Google Sans", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-variation-settings: "GRAD" 0; 
+
+    margin: 15px 0;
+}
+
+p{
+    font-family: "Google Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: "GRAD" 0; 
+
+    margin: 15px 0;
+    line-height: 1.5em;
+}
+
+body{
+    max-width: 800px;
+    margin: auto;
+}
