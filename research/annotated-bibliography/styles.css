@@ -1,6 +1,7 @@
 body{
     max-width: 800px;
     margin:auto;
+    background-color: rgb(255, 243, 228);
 }
 
 h1, h2, p, ul li{

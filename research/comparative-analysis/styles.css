@@ -1,7 +1,7 @@
 body{
     max-width: 800px;
     margin: auto;
-    background-color: rgb(255, 243, 228);
+    background-color: rgb(255, 253, 250);
 }
 
 h1, h2, p{
@@ -16,7 +16,7 @@ h1{
     font-style: normal;
     font-variation-settings: "GRAD" 0;
 
-    margin: 20px 0;
+    margin: 20px 0px;
 }
 
 h2{
@@ -25,15 +25,35 @@ h2{
     font-style: normal;
     font-variation-settings: "GRAD" 0; 
 
-    margin: 30px 0 15px 0;
+    margin: 20px 0px 5px 0px;
+    border-top: 1px solid black;
+    padding-top: 20px;
 }
 
-p{
+a{
+    color:rgb(21, 104, 167);
+    text-decoration: none;
+}
+
+a:hover{
+    color: rgb(109, 170, 217);
+}
+
+p, a{
     font-family: "Google Sans", sans-serif;
     font-weight: 400;
     font-style: normal;
     font-variation-settings: "GRAD" 0; 
 
-    margin: 15px 0;
     line-height: 1.5em;
+
+    margin: 20px 0;
+}
+
+.images{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+
+    margin: 30px 0;
 }
