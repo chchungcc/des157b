@@ -1,0 +1,103 @@
+/* resets */
+section{
+    margin: auto;
+    max-width: 1000px;
+}
+
+h1, p, label, input, input::placeholder, button, img{
+    margin: 0;
+    padding: 0;
+
+    font-family: "Outfit", sans-serif;
+    /* font-weight: 400; */
+    font-style: normal;
+    margin: auto;
+    text-align: center;
+
+}
+
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+input{
+    color: #5e5242;
+    font-size: 20px;
+}
+
+input:focus{
+    outline-color: #5e5242;
+}
+
+input::placeholder{
+   color: #B59C7A;
+   font-size: 20px;
+}
+
+
+/* set-up */
+body{
+    background-color: #FEF7F2;
+}
+
+
+.hidden{
+    display: none;
+}
+
+/* questions */
+label{
+    display: block;
+    margin-top: 160px;
+    font-size: 40px;
+    font-weight: 500;
+    color: #05674D;
+    width: 700px;
+}
+
+input{
+    display: block;
+    margin-top: 80px;
+
+    width: 16%;
+    padding: 20px;
+    border: 0px;
+    border-radius: 100px;
+
+    background-color:#E2D6C6;
+    box-shadow: inset 0px 2px 2px rgba(40, 40, 40, 0.5);
+}
+
+p{
+    font-weight: 300;
+    color: #319963;
+    margin-top: 20px;
+}
+
+button{
+    display: block;
+    margin-top: 100px;
+    padding: 10px 30px;
+    font-weight: 400;
+
+    border: 6px solid #FA744E;
+    border-radius: 100px;
+
+    background-color: transparent;
+    color: #FA744E; 
+}
+
+.claim{
+    color: #319963;
+}
+
+/* answers */
+h1{
+    font-weight: 500;
+    margin-top: 100px;
+    color: #319963
+}
+
+img{
+    display: block;
+}

@@ -25,15 +25,20 @@
     </style>
 </head>
 <body>
-    <h1>Change this H1</h1>
+    <h1>isEven</h1>
 
-    <p>Add a short description of your function, what it does and where you got it. You can pull it from some other project you have, or you can create a function from scratch that does something simple and straight forward. Don't just use one of Bill and Glenda's examples though.</p>
+    <p>This function uses the modulo operator to check if a number is even.</p>
 
     <h2>Named Function</h2>
     <code>
         <pre>
-            function(parameter){
-                Do something();
+            function isEven(num){
+                if(num%2 == 0){
+                    return("this number is even");
+                } 
+                else{
+                    return("this number is not even");
+                }
             }
         </pre>
     </code>
@@ -41,8 +46,13 @@
     <h2>Function Expression</h2>
     <code>
         <pre>
-            const aVaraiable = function(parameter){
-                Do something();
+            const isEven = function(num){
+                if(num%2 == 0){
+                    return("this number is even");
+                } 
+                else{
+                    return("this number is not even");
+                }
             }
         </pre>
     </code>
@@ -50,12 +60,18 @@
     <h2>Arrow Function</h2>
     <code>
         <pre>
-            const aVaraiable = arrow function...{
+            const isEven = num => {
+                if(num%2 == 0){
+                    return("this number is even");
+                } 
+                else{
+                    return("this number is not even");
+                }
             }
         </pre>
     </code>
 
-    <footer> Your Name </footer>
+    <footer> Christina Chung </footer>
     
 </body>
 </html>
