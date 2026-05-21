@@ -1,17 +1,6 @@
 (function(){
     'use strict';
 
-    function isEven(num){
-        if(num%2 == 0){
-            return("this number is even");
-        } 
-        else{
-            return("this number is nit even");
-        }
-    }
-
-    isEven(10);
-
     const btn = document.querySelector('#switch');
     const listimg = document.querySelectorAll('ul li img');
     const list = document.querySelectorAll('ul li a');

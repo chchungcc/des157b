@@ -4,7 +4,7 @@ section{
     max-width: 1000px;
 }
 
-h1, p, label, input, input::placeholder, button, img{
+h1, h2, p, label, input, input::placeholder, button, img{
     margin: 0;
     padding: 0;
 
@@ -16,88 +16,145 @@ h1, p, label, input, input::placeholder, button, img{
 
 }
 
+input[type="radio"] {
+    box-shadow: none;
+}
+
 input[type=number]::-webkit-inner-spin-button {
     -webkit-appearance: none;
 }
-
-input{
-    color: #5e5242;
-    font-size: 20px;
-}
-
-input:focus{
-    outline-color: #5e5242;
-}
-
-input::placeholder{
-   color: #B59C7A;
-   font-size: 20px;
-}
-
 
 /* set-up */
 body{
     background-color: #FEF7F2;
 }
 
-
 .hidden{
     display: none;
 }
 
 /* questions */
-label{
-    display: block;
-    margin-top: 160px;
-    font-size: 40px;
+h1{
+    margin-top: 140px;
+    font-size: 48px;
     font-weight: 500;
-    color: #05674D;
-    width: 700px;
+    color: #00B1A1;
 }
 
-input{
-    display: block;
-    margin-top: 80px;
-
-    width: 16%;
-    padding: 20px;
-    border: 0px;
-    border-radius: 100px;
-
-    background-color:#E2D6C6;
-    box-shadow: inset 0px 2px 2px rgba(40, 40, 40, 0.5);
-}
-
-p{
-    font-weight: 300;
-    color: #319963;
-    margin-top: 20px;
-}
-
-button{
-    display: block;
-    margin-top: 100px;
-    padding: 10px 30px;
+h2{
+    margin-top: 140px;
     font-weight: 400;
-
-    border: 6px solid #FA744E;
-    border-radius: 100px;
-
-    background-color: transparent;
-    color: #FA744E; 
+    font-size: 32px;
+    color: #09B7A7;
 }
 
 .claim{
-    color: #319963;
+    margin-top: 20px;
+    color: #09B7A7;
 }
 
-/* answers */
-h1{
-    font-weight: 500;
+.instructions{
+    font-weight: 300;
+    font-size: 20px;
+    color: #36889A;
+    margin-top: 20px;
+}
+
+button, #submit-btn{
+    display: block;
+    margin-top: 86px;
+    padding: 10px 30px;
+    font-weight: 400;
+    font-size: 20px;
+
+    border: 6px solid #98D9D2;
+    border-radius: 100px;
+
+    background-color: transparent;
+    color: #09B7A7; 
+
+    box-shadow: 0px 6px 0px #09B7A7;
+}
+
+/* input type number */
+input[type="number"]{
+    display: block;
+    text-align: left;
+    font-size: 20px;
     margin-top: 100px;
-    color: #319963
+
+    width: 30%;
+    padding: 10px;
+    border: 0px;
+    border-radius: 100px;
+
+    background-color:#EEDFC1;
+    color: #816e54;
+    
+    box-shadow: inset 0px 2px 2px rgba(40, 40, 40, 0.5);
+
+}
+
+input[type="number"]:focus{
+    outline-color: #897962;
+}
+
+input[type="number"]::placeholder{
+   color: #B59C7A;
+   font-size: 20px;
+   text-align: left;
+   padding-left: 10px;
+}
+
+/* input type radio */
+input[type="radio"] {
+    vertical-align: middle;
+    margin-top: -8px;
+    box-shadow: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #36889A;
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+}
+
+input[type="radio"]:checked {
+    background-color: #98D9D2;
+    border-color: #36889A;
+}
+
+label{
+    padding-left: 10px;
+    font-weight: 300;
+    font-size: 20px;
+    color: #36889A;
+}
+
+.radio-btns{
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-around;
+}
+
+
+/* answers */
+.stats{
+    margin-top:120px;
+    font-weight: 500;
+    font-size: 48px;
+    color: #339A46;
 }
 
 img{
     display: block;
+    margin-top: 60px;
+}
+
+.text{
+    margin-top: 60px;
+    font-weight: 300;
+    font-size: 20px;
+    color: #319963;
 }
