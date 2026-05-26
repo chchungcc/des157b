@@ -28,7 +28,7 @@
         <section class="question-screen">
             <h1>What percentage of the United States population are immigrants?</h1>
             
-            <input id="question1" type="number" min="0" max="100" placeholder="e.g., 50">
+            <input id="question1" type="number" name="question1" min="0" max="100" placeholder="e.g., 50">
             <p class="instructions">Please input a number from 0 – 100</p>
 
             <button class="next">Next</button>
@@ -55,28 +55,28 @@
 
             <div class="radio-btns">
                 <div>
-                    <input type="radio" name="q2frequency" id="q2-Never" value="Never">
+                    <input type="radio" name="question2" id="q2-Never" value="Never">
                     <label for="q2-Never">Never</label>
                 </div>
                 
                 <div>
-                    <input type="radio" name="q2frequency" id="q2-Rarely" value="Rarely">
+                    <input type="radio" name="question2" id="q2-Rarely" value="Rarely">
                     <label for="q2-Rarely">Rarely</label>
                 </div>
 
                 <div>
-                    <input type="radio" name="q2frequency" id="q2-Sometimes" value="Sometimes">
+                    <input type="radio" name="question2" id="q2-Sometimes" value="Sometimes">
                     <label for="q2-Sometimes">Sometimes</label>
                 </div>
             
 
                 <div>
-                    <input type="radio" name="q2frequency" id="q2-Often" value="Often">
+                    <input type="radio" name="question2" id="q2-Often" value="Often">
                     <label for="q2-Often">Often</label>
                 </div>
 
                 <div>
-                    <input type="radio" name="q2frequency" id="q2-Always" value="Always">
+                    <input type="radio" name="question2" id="q2-Always" value="Always">
                     <label for="q2-Always">Always</label>
                 </div>
             </div>
@@ -90,28 +90,28 @@
 
             <div class="radio-btns">
                 <div>
-                    <input type="radio" name="q3frequency" id="q3-Never" value="Never">
+                    <input type="radio" name="question3" id="q3-Never" value="Never">
                     <label for="q3-Never">Never</label>
                 </div>
                 
                 <div>
-                    <input type="radio" name="q3frequency" id="q3-Rarely" value="Rarely">
+                    <input type="radio" name="question3" id="q3-Rarely" value="Rarely">
                     <label for="q3-Rarely">Rarely</label>
                 </div>
 
                 <div>
-                    <input type="radio" name="q3frequency" id="q3-Sometimes" value="Sometimes">
+                    <input type="radio" name="question3" id="q3-Sometimes" value="Sometimes">
                     <label for="q3-Sometimes">Sometimes</label>
                 </div>
             
 
                 <div>
-                    <input type="radio" name="q3frequency" id="q3-Often" value="Often">
+                    <input type="radio" name="question3" id="q3-Often" value="Often">
                     <label for="q3-Often">Often</label>
                 </div>
 
                 <div>
-                    <input type="radio" name="q3frequency" id="q3-Always" value="Always">
+                    <input type="radio" name="question3" id="q3-Always" value="Always">
                     <label for="q3-Always">Always</label>
                 </div>
             </div>
@@ -125,28 +125,28 @@
 
             <div class="radio-btns">
                 <div>
-                    <input type="radio" name="q4frequency" id="q4-Never" value="Never">
+                    <input type="radio" name="question4" id="q4-Never" value="Never">
                     <label for="q4-Never">Never</label>
                 </div>
                 
                 <div>
-                    <input type="radio" name="q4frequency" id="q4-Rarely" value="Rarely">
+                    <input type="radio" name="question4" id="q4-Rarely" value="Rarely">
                     <label for="q4-Rarely">Rarely</label>
                 </div>
 
                 <div>
-                    <input type="radio" name="q4frequency" id="q4-Sometimes" value="Sometimes">
+                    <input type="radio" name="question4" id="q4-Sometimes" value="Sometimes">
                     <label for="q4-Sometimes">Sometimes</label>
                 </div>
             
 
                 <div>
-                    <input type="radio" name="q4frequency" id="q4-Often" value="Often">
+                    <input type="radio" name="question4" id="q4-Often" value="Often">
                     <label for="q4-Often">Often</label>
                 </div>
 
                 <div>
-                    <input type="radio" name="q4frequency" id="q4-Always" value="Always">
+                    <input type="radio" name="question4" id="q4-Always" value="Always">
                     <label for="q4-Always">Always</label>
                 </div>
             </div>
@@ -160,28 +160,28 @@
 
             <div class="radio-btns">
                 <div>
-                    <input type="radio" name="q5frequency" id="q5-Never" value="Never">
+                    <input type="radio" name="question5" id="q5-Never" value="Never">
                     <label for="q5-Never">Never</label>
                 </div>
                 
                 <div>
-                    <input type="radio" name="q5frequency" id="q5-Rarely" value="Rarely">
+                    <input type="radio" name="question5" id="q5-Rarely" value="Rarely">
                     <label for="q5-Rarely">Rarely</label>
                 </div>
 
                 <div>
-                    <input type="radio" name="q5frequency" id="q5-Sometimes" value="Sometimes">
+                    <input type="radio" name="question5" id="q5-Sometimes" value="Sometimes">
                     <label for="q5-Sometimes">Sometimes</label>
                 </div>
             
 
                 <div>
-                    <input type="radio" name="q5frequency" id="q5-Often" value="Often">
+                    <input type="radio" name="question5" id="q5-Often" value="Often">
                     <label for="q5-Often">Often</label>
                 </div>
 
                 <div>
-                    <input type="radio" name="q5frequency" id="q5-Always" value="Always">
+                    <input type="radio" name="question5" id="q5-Always" value="Always">
                     <label for="q5-Always">Always</label>
                 </div>
             </div>
@@ -192,7 +192,12 @@
         </section>
 
         <section class="question-screen stats2 hidden">
-            <h1></h1>
+            <h1>display results</h1>
+            <p id="q1result"></p>
+            <p id="q2result"></p>
+            <p id="q3result"></p>
+            <p id="q4result"></p>
+            <p id="q5result"></p>
             <button class="next">Next</button>
         </section>
     </form>
