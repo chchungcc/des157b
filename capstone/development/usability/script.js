@@ -13,26 +13,8 @@
 
     console.log(inputs);
 
-    // async function displayData(){
-    //     const answers = Parse.Object.extend('UserAnswers');
-    //     const query = new Parse.Query(answers);
-    //     const results = await query.ascending('question1').find();
-    //     console.log(results);
-
-    //     results.forEach(function (answer){
-    //         const id = answer.id;
-    //         const answer1 = answer.get('question1');
-    //         document.querySelector('#q1result').innerHTML = `<p>you answered ${answer1} for question one</p>`
-    //         const answer2 = answer.get('question2');
-    //         document.querySelector('#q2result').innerHTML = `<p>you answered ${answer2} for question two</p>`
-    //         const answer3 = answer.get('question3');
-    //         const answer4 = answer.get('question4');
-    //         const answer5 = answer.get('question5');
-    //     })
-    // }
-
-    //display results
-    async function displayData(){
+    //display recent results
+    async function displayRecent(){
         const answers = Parse.Object.extend('UserAnswers');
         const query = new Parse.Query(answers);
         
@@ -101,13 +83,49 @@
         nxtScreen();
         //wait for saving data to finish
         await addFormData();
-        await displayData();
+        await displayRecent();
     })
 
     //next button
     for(let i = 0; i < nxtBtn.length; i++){
         nxtBtn[i].addEventListener('click', function(event){
             event.preventDefault();
+
+            //select current section screen
+            const currentScreen = document.querySelector('.question-screen:not(.hidden)');
+
+            //capture number input 
+            const numInput = currentScreen.querySelector('#questionnaire input[type="number"]');
+            console.log(numInput);
+            //capture all radio buttons
+            const radioInput = currentScreen.querySelectorAll('#questionnaire input[type="radio"]');
+
+            let answered = true;
+
+            //check if question is radio input
+            if (radioInput.length > 0) {
+                //grabs name of the radio buttons
+                const radioName = radioInput[0].getAttribute('name');
+                //checks if there is a checked 
+                const checked = currentScreen.querySelector(`input[name="${radioName}"]:checked`);
+            
+                //if nothing was checked
+                if (checked === null) {
+                    answered = false;
+                }
+            }
+
+            //check if number input
+            if (numInput && numInput.value.trim() === ''){
+                answered = false;
+                console.log(answered);
+            }
+
+            if(answered === false){
+                alert('Please answer the question!');
+                return;
+            }
+
             nxtScreen();
             console.log('screen changed');
 

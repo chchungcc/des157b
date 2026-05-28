@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capstone V1</title>
+
+    <!-- normalization -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- style sheet -->
+    <link href="styles.css" rel="stylesheet">
+
+    <!-- This is the minified production version of Parse JS -->
+    <script type="text/javascript" src="https://unpkg.com/parse/dist/parse.min.js"></script>
+
+    <!-- javascript -->
+    <script src="script.js" defer></script>
+
+    
+
+</head>
+<body>
+
+    <section class="question-screen">
+        <h1>Usability Testing</h1>
+            
+        <p class="overlay-text">Hello there! Thank you for participating in my usability testing.</p>
+        <p class="overlay-text">For this usability test, please complete the following tasks and goals:</p>
+        <ol>
+            <li>Try to go to the next question without providing an answer</li>
+            <li>Answer all five questions</li>
+            <li>Submit your answers</li>
+        </ol>
+
+        <button class="next">Next</button>
+    </section>
+
+    <form id="questionnaire">
+
+        <section class="question-screen hidden">
+            <h1>What percentage of the United States population are immigrants?</h1>
+            
+            <input id="question1" type="number" name="question1" min="0" max="100" placeholder="e.g., 50" required>
+            <p class="instructions">Please input a number from 0 – 100</p>
+
+            <button class="next">Next</button>
+        </section>
+
+        <section class="question-screen hidden">
+            <h1 class="stats">As of 2025, <br>15.4% of the United States population <br>are immigrants.</h1>
+
+            <img src="images/people.png" alt="people" width="700">
+            <p class="text">That’s about x in x US residents.</p>
+
+            <p class="text">Studies find that people tend to overestimate the percentage of immigrants in the US, consistently guessing:</p>
+
+            <p class="text">30 – 40%</p>
+
+            <p class="text">Viewers of this project also overestimate this number.</p>
+
+            <button class="next">Next</button>
+        </section>
+
+        <section class="question-screen hidden">
+            <h2>How often have you heard this claim:</h2>
+            <h1 class="claim">"Immigrants are causing an increase in crime rates in the United States"</h1>
+
+            <div class="radio-btns">
+                <div>
+                    <input type="radio" name="question2" id="q2-Never" value="Never" required>
+                    <label for="q2-Never">Never</label>
+                </div>
+                
+                <div>
+                    <input type="radio" name="question2" id="q2-Rarely" value="Rarely" required>
+                    <label for="q2-Rarely">Rarely</label>
+                </div>
+
+                <div>
+                    <input type="radio" name="question2" id="q2-Sometimes" value="Sometimes" required>
+                    <label for="q2-Sometimes">Sometimes</label>
+                </div>
+            
+
+                <div>
+                    <input type="radio" name="question2" id="q2-Often" value="Often" required>
+                    <label for="q2-Often">Often</label>
+                </div>
+
+                <div>
+                    <input type="radio" name="question2" id="q2-Always" value="Always" required>
+                    <label for="q2-Always">Always</label>
+                </div>
+            </div>
+            
+            <button class="next">Next</button>
+        </section>
+
+        <section class="question-screen hidden">
+            <h2>How often have you heard this claim:</h2>
+            <h1 class="claim">"Immigrants are taking jobs away from people born in the United States"</h1>
+
+            <div class="radio-btns">
+                <div>
+                    <input type="radio" name="question3" id="q3-Never" value="Never" required>
+                    <label for="q3-Never">Never</label>
+                </div>
+                
+                <div>
+                    <input type="radio" name="question3" id="q3-Rarely" value="Rarely" required>
+                    <label for="q3-Rarely">Rarely</label>
+                </div>
+
+                <div>
+                    <input type="radio" name="question3" id="q3-Sometimes" value="Sometimes" required>
+                    <label for="q3-Sometimes">Sometimes</label>
+                </div>
+            
+
+                <div>
+                    <input type="radio" name="question3" id="q3-Often" value="Often" required>
+                    <label for="q3-Often">Often</label>
+                </div>
+
+                <div>
+                    <input type="radio" name="question3" id="q3-Always" value="Always" required>
+                    <label for="q3-Always">Always</label>
+                </div>
+            </div>
+
+            <button class="next">Next</button>
+        </section>
+
+        <section class="question-screen hidden">
+            <h2>How often have you heard this claim:</h2>
+            <h1 class="claim">"Immigrants take advantage of government welfare support while not paying taxes"</h1>
+
+            <div class="radio-btns">
+                <div>
+                    <input type="radio" name="question4" id="q4-Never" value="Never" required>
+                    <label for="q4-Never">Never</label>
+                </div>
+                
+                <div>
+                    <input type="radio" name="question4" id="q4-Rarely" value="Rarely" required>
+                    <label for="q4-Rarely">Rarely</label>
+                </div>
+
+                <div>
+                    <input type="radio" name="question4" id="q4-Sometimes" value="Sometimes" required>
+                    <label for="q4-Sometimes">Sometimes</label>
+                </div>
+            
+
+                <div>
+                    <input type="radio" name="question4" id="q4-Often" value="Often" required>
+                    <label for="q4-Often">Often</label>
+                </div>
+
+                <div>
+                    <input type="radio" name="question4" id="q4-Always" value="Always" required>
+                    <label for="q4-Always">Always</label>
+                </div>
+            </div>
+
+            <button class="next">Next</button>
+        </section>
+
+        <section class="question-screen hidden">
+            <h2>How often have you heard this claim:</h2>
+            <h1 class="claim">"It is easy to immigrate to the United States so immigrants need to just get in line"</h1>
+
+            <div class="radio-btns">
+                <div>
+                    <input type="radio" name="question5" id="q5-Never" value="Never" required>
+                    <label for="q5-Never">Never</label>
+                </div>
+                
+                <div>
+                    <input type="radio" name="question5" id="q5-Rarely" value="Rarely" required>
+                    <label for="q5-Rarely">Rarely</label>
+                </div>
+
+                <div>
+                    <input type="radio" name="question5" id="q5-Sometimes" value="Sometimes" required>
+                    <label for="q5-Sometimes">Sometimes</label>
+                </div>
+            
+
+                <div>
+                    <input type="radio" name="question5" id="q5-Often" value="Often" required>
+                    <label for="q5-Often">Often</label>
+                </div>
+
+                <div>
+                    <input type="radio" name="question5" id="q5-Always" value="Always" required>
+                    <label for="q5-Always">Always</label>
+                </div>
+            </div>
+
+            <div class="submit">
+                <input type="submit" id="submit-btn">
+            </div>
+        </section>
+
+        <section class="question-screen stats2 hidden">
+            <h1>display results</h1>
+            <p id="q1result"></p>
+            <p id="q2result"></p>
+            <p id="q3result"></p>
+            <p id="q4result"></p>
+            <p id="q5result"></p>
+            <button class="next">Next</button>
+        </section>
+    </form>
+    
+</body>
+</html>
