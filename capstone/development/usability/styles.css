@@ -53,7 +53,7 @@ h2{
     color: #09B7A7;
 }
 
-.instructions, .overlay-text, ol li{
+.instructions, .overlay-text, ol li, .error-message{
     font-weight: 300;
     font-size: 20px;
     color: #36889A;

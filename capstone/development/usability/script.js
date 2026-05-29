@@ -12,6 +12,7 @@
     const inputs = document.querySelectorAll('#questionnaire input:not([type="submit"])');
 
     console.log(inputs);
+    // displayRadioData();
 
     //display recent results
     async function displayRecent(){
@@ -36,6 +37,21 @@
         }
     }
 
+    //work in progress
+    async function displayRadioData(){
+        const answers = Parse.Object.extend('UserAnswers');
+        const query = new Parse.Query(answers);
+        const frequency = ['Never', 'Rarely', 'Sometimes', 'Often', 'Always'];
+
+        query.equalTo('question2', 'Sometimes');
+        try{
+            const count = await query.count();
+            console.log("Instances of this answer: " + count);
+        } catch (error) {
+            console.error("Error:", error);
+        }
+    }
+
     //logging inputs
     async function addFormData(){
         const newAnswer = {};
@@ -48,8 +64,8 @@
                 if(input.checked){
                     newAnswer[key] = input.value;
                 }
-            } else if (input.type === 'number') {
-                newAnswer[key] = Number(input.value);
+            } else if (input.type === 'number') { 
+                newAnswer[key] = Number(input.value); //convert value to number
             } else {
                 newAnswer[key] = input.value;
             }
@@ -66,7 +82,7 @@
             userAnswer.set(key, newAnswer[key]);
         });
 
-        //save to Back4App
+        //save to back4app
         try {
             const result = await userAnswer.save();
             console.log('Saved successfully! Object ID:', result.id);
@@ -80,18 +96,35 @@
     //submit button
     submitBtn.addEventListener('click', async function(event){
         event.preventDefault();
-        nxtScreen();
-        //wait for saving data to finish
-        await addFormData();
-        await displayRecent();
+        if(!validateForm){
+            return;
+        }
+        else{
+            nxtScreen();
+            //wait for saving data to finish
+            await addFormData();
+            await displayRecent();
+        }
+        
     })
 
     //next button
     for(let i = 0; i < nxtBtn.length; i++){
         nxtBtn[i].addEventListener('click', function(event){
             event.preventDefault();
+            if(!validateForm()){
+                return;
+            } else{
+               nxtScreen(); 
+            }
+            console.log('screen changed');
 
-            //select current section screen
+        })
+    }
+
+    //form validation
+    function validateForm(){
+        //select current section screen
             const currentScreen = document.querySelector('.question-screen:not(.hidden)');
 
             //capture number input 
@@ -112,24 +145,22 @@
                 //if nothing was checked
                 if (checked === null) {
                     answered = false;
+                    console.log(answered);
                 }
             }
 
-            //check if number input
+            //check if there is number input
             if (numInput && numInput.value.trim() === ''){
                 answered = false;
-                console.log(answered);
+                // console.log(answered);
             }
 
             if(answered === false){
                 alert('Please answer the question!');
-                return;
+                // return;
             }
 
-            nxtScreen();
-            console.log('screen changed');
-
-        })
+            return answered;
     }
     
     //change screens
