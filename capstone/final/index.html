@@ -13,6 +13,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
 
+    <!-- fullpage style sheet -->
+    <link rel="stylesheet" type="text/css" href="fullpage.css" />
+
     <!-- style sheet -->
     <link href="styles.css" rel="stylesheet">
 
@@ -20,9 +23,10 @@
     <script type="text/javascript" src="https://unpkg.com/parse/dist/parse.min.js"></script>
 
     <!-- chart.js library -->
-    <!-- <script src="d3.v7.min.js" defer></script> -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/d3@7"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.min.js"></script>
+
+    <!-- fullpage library -->
+    <script type="text/javascript" src="fullpage.min.js"></script>
 
     <!-- javascript -->
     <script type="module" src="script.js" defer></script>
@@ -44,7 +48,7 @@
             <button class="next">Next</button>
         </section>
 
-        <section class="question-screen hidden">
+        <section class="question-screen stats1 hidden">
             <h1 class="stats">As of 2025, <br>15.4% of the United States population <br>are immigrants.</h1>
 
             <!-- <img src="images/people.png" alt="people" width="700"> -->
@@ -216,64 +220,94 @@
             </div>
         </section>
 
-        <section class="question-screen stats2">
-            <h1>display results</h1>
-            <!-- <p id="q1result"></p>
-            <p id="q2result"></p>
-            <p id="q3result"></p>
-            <p id="q4result"></p>
-            <p id="q5result"></p> -->
+        <section class="question-screen stats2 hidden">
+            <h1>Most people have heard or read these kinds of false claims about immigrants</h1>
+            
             <div class="chart-area">
                 <canvas id="chart1"></canvas>
             </div>
+
+            <section class="claimSection">
+                <p class="claimHeader">Claim 1: "Immigrants are causing an increase in crime rates in the United States"</p>
+                <div class="claimResponse">
+                    <div>
+                        <p>Multiple studies have found that there is no correlation between increased immigration and increased crime rates.</p>
+                        <br>
+                        <p>In fact, immigrants have never been more likely to be incarcerated than the US-born.</p>
+                        <canvas id="chart2"></canvas>
+                    </div> 
+                </div>
+            </section>
+            
+            <section class="claimSection">
+                <p class="claimHeader">Claim 2: "Immigrants are taking jobs away from people born in the United States"</p>
+                <div class="claimResponse">
+                    <div>
+                        <p>Immigrants create jobs by increasing consumer demand and starting businesses.</p>
+                        <br>
+                        <p>They fill labor shortages in manual-intensive industries such as healthcare, childcare, construction, and food services, jobs that many US-born are often unwilling to take</p>
+                    </div> 
+                </div>
+            </section>
+            
+            <section class="claimSection">
+                <p class="claimHeader">Claim 3: "Immigrants take advantage of government welfare support while not paying taxes"</p>
+                <div class="claimResponse">
+                    <div>
+                        <p>Undocumented immigrants pay billions in taxes every year while being ineligible for government welfare due to their status</p>
+                    </div> 
+                </div>
+            </section>
+
+            <section class="claimSection">
+                <p class="claimHeader">Claim 4: "It is easy to immigrate to the United States so immigrants need to just get in line"</p>
+                <div class="claimResponse">
+                    <div>
+                        <p>Is it really?</p>
+                    </div> 
+                </div>
+            </section>
+            
             <button class="next">Next</button>
         </section>
     </form>
 
     <!-- timeline -->
-    <section class="question-screen hidden timeline">
-        <!-- <h1>Glimpses Into the History of US Immigration</h1> -->
-        
-        <!-- <section>
-            <h2>1790 Naturalization Act</h2>
-            <p>"Free white persons" who have resided in the US for at least two years may be granted citizenship, as long as they demonstrate good moral character and pledge allegiance to the Constitution</p>
-            <p>In 1870, amended naturalization requirements to extend eligibility to individuals of African nativity or descent</p>
-        </section>
+    <section class="question-screen timeline">
+        <div id="fullpage">
+            <div class="section">
+            <p>There are four ways to acquire permanent residence in the US:</p>
+            <div class="immigrationTypes">
+                <div class="card">
+                    <p>Through family</p>
+                </div>
 
-        <section>
-            <h2>1864 Immigration Act</h2>
-            <p>Made contracts for immigrant labor formed abroad enforceable by U.S. court, thus encouraging immigration to address labor shortages</p>
-        </section>
+                <div class="card">
+                    <p>Through employment</p>
+                </div>
 
-        <section>
-            <h2>1882 Chinese Exclusion Act</h2>
-            <p>Banned Chinese laborers from immigrating for the next 10 years and authorized deportation of unauthorized Chinese immigrants</p>
-        </section>
+                <div class="card">
+                    <p>Through lottery</p>
+                </div>
 
-        <section>
-            <h2>1917 Immigration Act</h2>
-            <p>Banned immigration from most Asian countries, except the Philippines, which was a U.S. colony, and Japan, whose government voluntarily eliminated the immigration of Japanese laborers as part of the Gentlemen’s Agreement of 1907.</p>
-        </section>
+                <div class="card">
+                    <p>As a refugee</p>
+                </div>
+            </div>
+            </div>
 
-        <section>
-            <h2>1921 Emergency Quota Act</h2>
-            <p>First U.S. law to create numerical quotas for immigration based on nationality.</p>
-        </section>
+            <div class="section">
+                <p>A lot of people imagine the process to getting permanent residency in the US looks something like this:</p>
+                <div class="line"></div>
+            </div>
 
-        <section>
-            <h2>1953 Refugee Relief Act</h2>
-            <p>Authorized special non-quota visas for more than 200,000 refugees and allowed these immigrants to become permanent residents</p>
-        </section>
-
-        <section>
-            <h2>1953 Refugee Relief Act</h2>
-            <p>Authorized special non-quota visas for more than 200,000 refugees and allowed these immigrants to become permanent residents</p>
-        </section> -->
-
-        <!-- <h1></h1> -->
-        
+            <div class="section">
+                <p>But in reality, it looks a lot more like this:</p>
+                <button class="getCard">Get Green Card Now!</button>
+                <p class="outcome">Sorry, you didn't get a green card this time. Try again next time!</p>
+            </div>
+        </div>
     </section>
-    
 
 </body>
 </html>

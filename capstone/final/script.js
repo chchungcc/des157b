@@ -7,7 +7,7 @@
     Parse.serverURL = "https://parseapi.back4app.com/";
 
     const nxtBtn = document.querySelectorAll('.next');
-    const submitBtn = document.querySelector('.submit')
+    const submitBtn = document.querySelector('.submit');
     const screens = document.querySelectorAll('.question-screen');
     const inputs = document.querySelectorAll('#questionnaire input:not([type="submit"])');
 
@@ -18,10 +18,41 @@
     let oftenNum = {};
     let alwaysNum = {};
 
-    // console.log(inputs);
-    // displayRadioData();
+    //for card btn
+    let count = 0;
+    const cardBtn = document.querySelector('.getCard');
+    const outcome = document.querySelector('.outcome');
 
-    showChart();
+    showChart(); 
+
+    //get visa button
+    // cardBtn.addEventListener('click', function(event){
+    //     event.preventDefault();
+    //     if(count == 0){
+    //         alert('Like');
+    //         cardBtn.textContent = "Next Step!"
+    //     } else if (count == 1){
+    //         alert('a');
+    //         cardBtn.textContent = "Another Step!"
+    //     } else if (count == 2){
+    //         alert('series');
+    //         cardBtn.textContent = "And Another!"
+    //     } else if (count == 3){
+    //         alert('of');
+    //         cardBtn.textContent = "Almost There!"
+    //     } else if (count == 4){
+    //         alert('annoying');
+    //         cardBtn.textContent = "So Close!"
+    //     } else if (count == 5){
+    //         alert('pop-ups.');
+    //         cardBtn.style.display = 'none';
+    //         outcome.style.display = 'block';
+    //     }
+    //     count++;
+    //     console.log(count);
+    // })
+
+
 
     //retrieve data
     async function summarizeData(){
@@ -96,12 +127,12 @@
     }
 
     //draw chart
-    async function drawChart(){
+    async function drawResultsChart(){
         const chart1 = document.querySelector('#chart1').getContext('2d');
         new Chart (chart1, {
             type: 'bar',
             data: {
-                labels: ['question 2', 'question 3', 'question 4', 'question 5'],
+                labels: ['Claim 1', 'Claim 2', 'Claim 3', 'Claim 4'],
                 datasets: [
                     //never
                     {
@@ -161,87 +192,30 @@
             },
 
             options: {
-                indexAxis: 'y'
+                indexAxis: 'y',
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'How Other People Have Answered'
+                    }
+                }
             }
         })
-        // new Chart (chart1, {
-        //     type: 'bar',
-        //     data: {
-        //         labels: ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul'],
-        //         datasets: [{
-        //             axis: 'y',
-        //             label: 'My First Dataset',
-        //             data: [65, 59, 80, 81, 56, 55, 40],
-        //             fill: false,
-        //             backgroundColor: [
-        //                 'rgba(255, 99, 132, 0.2)',
-        //                 'rgba(255, 159, 64, 0.2)',
-        //                 'rgba(255, 205, 86, 0.2)',
-        //                 'rgba(75, 192, 192, 0.2)',
-        //                 'rgba(54, 162, 235, 0.2)',
-        //                 'rgba(153, 102, 255, 0.2)',
-        //                 'rgba(201, 203, 207, 0.2)'
-        //             ],
-        //             borderColor: [
-        //                 'rgb(255, 99, 132)',
-        //                 'rgb(255, 159, 64)',
-        //                 'rgb(255, 205, 86)',
-        //                 'rgb(75, 192, 192)',
-        //                 'rgb(54, 162, 235)',
-        //                 'rgb(153, 102, 255)',
-        //                 'rgb(201, 203, 207)'
-        //             ],
-        //             borderWidth: 1
-        //         }]
-        //     },
-        //     options: {             
-        //         indexAxis: 'y'         
-        //     }
-        // })
         console.log('graphed')
     }
 
+    //work in progress
+    function drawStatsChart(){
+        const chart2 = document.querySelector('#chart2').getContext('2d');
+        new Chart (chart2, {
+            type: 'doughnut'
+        })
+    }
+
+    //showing the chart 
     async function showChart(){
         await summarizeData();
-        await drawChart();
-    }
-
-    //display recent results
-    async function displayRecent(){
-        const answers = Parse.Object.extend('UserAnswers');
-        const query = new Parse.Query(answers);
-        
-        // get the most recently created row
-        const latest = await query.descending('createdAt').first();
-
-        if (latest) {
-            const answer1 = latest.get('question1');
-            const answer2 = latest.get('question2');
-            const answer3 = latest.get('question3');
-            const answer4 = latest.get('question4');
-            const answer5 = latest.get('question5');
-
-            document.querySelector('#q1result').innerHTML = `<p>you answered ${answer1} for question one</p>`;
-            document.querySelector('#q2result').innerHTML = `<p>you answered ${answer2} for question two</p>`;
-            document.querySelector('#q3result').innerHTML = `<p>you answered ${answer3} for question three</p>`;
-            document.querySelector('#q4result').innerHTML = `<p>you answered ${answer4} for question four</p>`;
-            document.querySelector('#q5result').innerHTML = `<p>you answered ${answer5} for question five</p>`;
-        }
-    }
-
-    //work in progress
-    async function displayRadioData(){
-        const answers = Parse.Object.extend('UserAnswers');
-        const query = new Parse.Query(answers);
-        const frequency = ['Never', 'Rarely', 'Sometimes', 'Often', 'Always'];
-
-        query.equalTo('question2', 'Sometimes');
-        try{
-            const count = await query.count();
-            console.log("Instances of this answer: " + count);
-        } catch (error) {
-            console.error("Error:", error);
-        }
+        await drawResultsChart();
     }
 
     //logging inputs
@@ -295,7 +269,7 @@
             nxtScreen();
             //wait for saving data to finish
             await addFormData();
-            await displayRecent();
+            await showChart();
         }
         
     })
@@ -372,5 +346,12 @@
         }
 
     }
+
+    //fullpage
+    new fullpage('#fullpage', {
+        //options here
+        autoScrolling:true,
+        scrollHorizontally: true
+    });
 
 })();

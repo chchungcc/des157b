@@ -183,3 +183,62 @@ img{
     background-color: #00B1A1;
     border-radius: 100px;
 }
+
+/* results screen  */
+.claimSection{
+    margin: 30px 0px;
+}
+
+.claimSection p {
+    text-align: left;
+}
+
+.claimHeader{
+    color: #00B1A1;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.claimResponse {
+    margin: 20px 0px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.claimResponse div{
+    background-color: #f1e7d1;
+    padding: 10px;
+    border-left: solid salmon 6px;
+    width: 500px;
+}
+
+/* immigration laws */
+.immigrationTypes{
+    display: flex;
+    gap: 20px;
+    justify-content: space-around;
+}
+
+.card{
+    flex: 1;
+    background-color: #f1e7d1;
+}
+
+.outcome{
+    display: none;
+}
+
+/* line animation */
+.line{
+    height: 10px;
+    width: 0px;
+    background-color:#09B7A7;
+    animation: fill 3s linear forwards;
+}
+
+@keyframes fill{
+    0%{width:0px;}
+    100%{width:1000px;}
+}
+
+
