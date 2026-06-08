@@ -6,6 +6,35 @@
     Parse.initialize("XOZcA2zrKTVUA7OkaSm6ITZFS6M7FdtMGprvUyc2", "FUxOL6nSyjfmNB4fbLs38xcSs5Jf9dk4JwMmH0kM"); 
     Parse.serverURL = "https://parseapi.back4app.com/";
 
+    //gsap split text
+    gsap.registerPlugin(SplitText);
+
+    //animate on scroll
+    AOS.init();
+
+    AOS.init({
+        // Global settings:
+        disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
+        startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
+        initClassName: 'aos-init', // class applied after initialization
+        animatedClassName: 'aos-animate', // class applied on animation
+        useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
+        disableMutationObserver: false, // disables automatic mutations' detections (advanced)
+        debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
+        throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
+        
+
+        // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
+        offset: 120, // offset (in px) from the original trigger point
+        delay: 0, // values from 0 to 3000, with step 50ms
+        duration: 400, // values from 0 to 3000, with step 50ms
+        easing: 'ease', // default easing for AOS animations
+        once: false, // whether animation should happen only once - while scrolling down
+        mirror: false, // whether elements should animate out while scrolling past them
+        anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
+
+    });
+
     const nxtBtn = document.querySelectorAll('.next');
     const submitBtn = document.querySelector('.submit');
     const screens = document.querySelectorAll('.question-screen');
@@ -22,37 +51,134 @@
     let count = 0;
     const cardBtn = document.querySelector('.getCard');
     const outcome = document.querySelector('.outcome');
+    const outline = document.querySelector('.outline');
+    const line = document.querySelector('.line');
 
-    showChart(); 
+    //text animation
+    let splitClaim;
+    // showChart(); 
 
-    //get visa button
-    // cardBtn.addEventListener('click', function(event){
-    //     event.preventDefault();
-    //     if(count == 0){
-    //         alert('Like');
-    //         cardBtn.textContent = "Next Step!"
-    //     } else if (count == 1){
-    //         alert('a');
-    //         cardBtn.textContent = "Another Step!"
-    //     } else if (count == 2){
-    //         alert('series');
-    //         cardBtn.textContent = "And Another!"
-    //     } else if (count == 3){
-    //         alert('of');
-    //         cardBtn.textContent = "Almost There!"
-    //     } else if (count == 4){
-    //         alert('annoying');
-    //         cardBtn.textContent = "So Close!"
-    //     } else if (count == 5){
-    //         alert('pop-ups.');
-    //         cardBtn.style.display = 'none';
-    //         outcome.style.display = 'block';
-    //     }
-    //     count++;
-    //     console.log(count);
-    // })
+    //animate line
+    outline.addEventListener('click', function(event){
+        event.preventDefault();
+        line.classList.add('animate');
+    })
 
+    line.addEventListener('animationend', function(event){
+        event.preventDefault();
+        alert('Congratulations! You are now a permanent US resident!')
+    })
 
+    //typewriter
+    function typewriter(element, onComplete){
+        
+        const split = SplitText.create(element, { type: "chars, words" });
+        
+        gsap.from(split.chars, {
+            opacity: 0,
+            duration: 0.05,
+            stagger: 0.03,
+            ease: 'power1.in',
+            onComplete: onComplete 
+        });
+    }
+
+    function typewriterWords(element, onComplete){
+        
+        const split = SplitText.create(element, { type: "words" });
+        
+        gsap.from(split.words, {
+            opacity: 0,
+            duration: 0.05,
+            stagger: 0.03,
+            ease: 'power1.in',
+            onComplete: onComplete 
+        });
+    }
+
+    function stagger(element, onComplete){
+        const split = SplitText.create(element, { type: "chars, words" });
+        gsap.from(split.chars,{
+            y:100,
+            autoAlpha:0,
+            stagger: 0.05
+        })
+    }
+
+    //get green card button
+    cardBtn.addEventListener('click', function(event){
+        event.preventDefault();
+        if(count == 0){
+            alert('Like');
+            cardBtn.textContent = "Next Step!"
+            document.querySelector('#popGroup1').style.display = 'block';
+        } else if (count == 1){
+            alert('a');
+            cardBtn.textContent = "Another Step!"
+            document.querySelector('#popGroup2').style.display = 'block';
+        } else if (count == 2){
+            alert('series');
+            cardBtn.textContent = "And Another!"
+            document.querySelector('#popGroup3').style.display = 'block';
+        } else if (count == 3){
+            alert('of');
+            cardBtn.textContent = "Almost There!"
+            document.querySelector('#popGroup4').style.display = 'block';
+        } else if (count == 4){
+            alert('annoying');
+            cardBtn.textContent = "So Close!"
+            document.querySelector('#popGroup5').style.display = 'block';
+        } else if (count == 5){
+            alert('pop-ups.');
+            cardBtn.style.display = 'none';
+            document.querySelector('#popGroup1').style.display = 'none';
+            document.querySelector('#popGroup2').style.display = 'none';
+            document.querySelector('#popGroup3').style.display = 'none';
+            document.querySelector('#popGroup4').style.display = 'none';
+            document.querySelector('#popGroup5').style.display = 'none';
+            document.querySelector('#pop13').style.display = 'block';
+            document.querySelector('#finalNext').style.display = 'block';
+            outcome.style.display = 'block';
+        }
+        count++;
+        console.log(count);
+    })
+
+    //tell us btn
+    const showBtn = document.querySelector('.show');
+    const tellUsBox = document.querySelector('#tell-us-box');
+
+    tellUsBox.style.display = 'none';
+
+    showBtn.addEventListener('click', async function(event) {
+        event.preventDefault();
+        tellUsBox.style.display = 'block';
+    });
+    
+    //submit text areqa
+    const submitTextBtn = document.querySelector('.submitText');
+    const feedbackInput = document.querySelector('#feedback');
+    submitTextBtn.addEventListener('click', async function(event) {
+        event.preventDefault();
+        const text = feedbackInput.value.trim();
+        if (!text) { alert('Please write something!'); return; }
+
+        const FutureResponses = Parse.Object.extend('FutureResponses');
+        const futureResponse = new FutureResponses();
+        futureResponse.set('response', text);
+
+        try {
+            await futureResponse.save();
+            feedbackInput.value = '';
+            tellUsBox.style.display = 'none';
+            console.log('Future response saved!');
+            feedbackInput.value = '';
+            alert('Thank you for your response!');
+            allResponses.unshift(saved);
+        } catch (error) {
+            console.error('Error saving:', error.message);
+        }
+    });
 
     //retrieve data
     async function summarizeData(){
@@ -140,8 +266,8 @@
                         label: 'Never',
                         data: neverNum,
                         fill: false,
-                        backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                        borderColor: 'rgb(255, 99, 132)',
+                        backgroundColor: 'rgba(132, 0, 22, 0.5)',
+                        borderColor: 'rgb(132, 0, 22)',
                         borderWidth: 1
                     },
 
@@ -151,8 +277,8 @@
                         label: 'Rarely',
                         data: rarelyNum,
                         fill: false,
-                        backgroundColor: 'rgba(255, 159, 64, 0.2)',
-                        borderColor: 'rgb(255, 159, 64)',
+                        backgroundColor: 'rgba(219, 90, 111, 0.5)',
+                        borderColor: 'rgb(219, 90, 111)',
                         borderWidth: 1
                     },
 
@@ -162,8 +288,8 @@
                         label: 'Sometimes',
                         data: sometimesNum,
                         fill: false,
-                        backgroundColor: 'rgba(255, 205, 86, 0.2)',
-                        borderColor: 'rgb(255, 205, 86)',
+                        backgroundColor: 'rgba(234, 254, 87, 0.5)',
+                        borderColor: 'rgb(174, 192, 37)',
                         borderWidth: 1
                     },
 
@@ -173,8 +299,8 @@
                         label: 'Often',
                         data: oftenNum,
                         fill: false,
-                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                        borderColor: 'rgb(75, 192, 192)',
+                        backgroundColor: 'rgba(95, 117, 226, 0.5)',
+                        borderColor: 'rgb(95, 117, 226)',
                         borderWidth: 1
                     },
 
@@ -184,8 +310,8 @@
                         label: 'Always',
                         data: alwaysNum,
                         fill: false,
-                        backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                        borderColor: 'rgb(54, 162, 235)',
+                        backgroundColor: 'rgba(0, 13, 81, 0.5)',
+                        borderColor: 'rgb(0, 13, 81)',
                         borderWidth: 1
                     }
                 ]
@@ -214,8 +340,14 @@
 
     //showing the chart 
     async function showChart(){
+        const loader = document.querySelector('.loader');
+    
+        loader.textContent = 'LOADING CHART...';
+        
         await summarizeData();
         await drawResultsChart();
+        
+        loader.style.display = 'none';
     }
 
     //logging inputs
@@ -338,6 +470,47 @@
             if (i + 1 < screens.length) {
                     //show screen
                     screens[i + 1].classList.remove("hidden");
+                    window.scrollTo(0, 0);
+                    AOS.refresh();
+
+                    const claims = screens[i + 1].querySelector('.claim');
+                    if (claims) typewriter(claims);
+
+                    const h1 = screens[i + 1].querySelector('.stats');
+                    const textClaim = screens[i + 1].querySelector('.text');
+                    const statsPClaim = screens[i + 1].querySelector('.stats-p');
+
+                    if (statsPClaim) statsPClaim.style.visibility = 'hidden';
+                    if (textClaim) textClaim.style.visibility = 'hidden';
+
+                    if (h1) {
+                        typewriter(h1, () => {
+                            if (textClaim) {
+                                textClaim.style.visibility = 'visible';
+                                typewriterWords(textClaim, () => {
+                                    if (statsPClaim) {
+                                        statsPClaim.style.visibility = 'visible';
+                                        stagger(statsPClaim);
+                                    }
+                                });
+                            }
+                        });
+                    }
+
+                    const spanRed = screens[i + 1].querySelectorAll('span.red');
+                    if (spanRed.length > 0) {
+                        spanRed.forEach(span => stagger(span));
+                    }
+
+
+                    if (screens[i + 1].classList.contains('timeline')) {
+                        new fullpage('#fullpage', {
+                            //options here
+                            autoScrolling:true,
+                            // scrollHorizontally: true
+                        });
+                    }
+
                 } else {
                     console.log('no screens left');
                 }
@@ -346,12 +519,19 @@
         }
 
     }
-
-    //fullpage
-    new fullpage('#fullpage', {
-        //options here
-        autoScrolling:true,
-        scrollHorizontally: true
+    //jquery drag
+    $(function(){
+        $( "#pop1" ).draggable({containment: 'body', stack: '.popCard'});
+        $( "#pop2" ).draggable({containment: 'body', stack: '.popCard'});
+        $( "#pop3" ).draggable({containment: 'body', stack: '.popCard'});
+        $( "#pop4" ).draggable({containment: 'body', stack: '.popCard'});
+        $( "#pop5" ).draggable({containment: 'body', stack: '.popCard'});
+        $( "#pop6" ).draggable({containment: 'body', stack: '.popCard'});
+        $( "#pop7" ).draggable({containment: 'body', stack: '.popCard'});
+        $( "#pop8" ).draggable({containment: 'body', stack: '.popCard'});
+        $( "#pop9" ).draggable({containment: 'body', stack: '.popCard'});
+        $( "#pop10" ).draggable({containment: 'body', stack: '.popCard'});
+        $( "#pop11" ).draggable({containment: 'body', stack: '.popCard'});
+        $( "#pop12" ).draggable({containment: 'body', stack: '.popCard'});
     });
-
 })();

@@ -11,10 +11,16 @@
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Jersey+20&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
     <!-- fullpage style sheet -->
     <link rel="stylesheet" type="text/css" href="fullpage.css" />
+
+    <!-- animate on scroll -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <!-- style sheet -->
     <link href="styles.css" rel="stylesheet">
@@ -28,6 +34,21 @@
     <!-- fullpage library -->
     <script type="text/javascript" src="fullpage.min.js"></script>
 
+    <!-- jquery library-->
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous" defer></script>
+
+    <!-- jquery ui -->
+    <script src="https://code.jquery.com/ui/1.14.2/jquery-ui.min.js" integrity="sha256-mblSWfbYzaq/f+4akyMhE6XELCou4jbkgPv+JQPER2M=" crossorigin="anonymous" defer></script>
+
+    <!-- gsap -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js" defer></script>
+
+    <!-- gsap split text -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/SplitText.min.js" defer></script>
+
+    <!-- animate on scroll -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
     <!-- javascript -->
     <script type="module" src="script.js" defer></script>
 
@@ -38,7 +59,7 @@
     <!-- form with all the questions -->
     <form id="questionnaire">
 
-        <section class="question-screen hidden">
+        <section class="question-screen">
             <h1>What percentage of the United States population are immigrants?</h1>
             
             <input id="question1" type="number" name="question1" min="0" max="100" placeholder="e.g., 50" required>
@@ -46,33 +67,32 @@
             <p class="error-message"></p>
 
             <button class="next">Next</button>
+
+            <div class="decorations">
+                <img src="images/blueguy1.png" width="100" id="blue1">
+                <img src="images/redguy1.png" width="120" id="red1">
+            </div>
         </section>
 
-        <section class="question-screen stats1 hidden">
+        <section class="question-screen hidden stats1">
             <h1 class="stats">As of 2025, <br>15.4% of the United States population <br>are immigrants.</h1>
 
-            <!-- <img src="images/people.png" alt="people" width="700"> -->
-            <div class="percentageGraphic">
-                <div class="circle"></div>
-                <div class="circle"></div>
-                <div class="circle"></div>
-                <div class="circle"></div>
-                <div class="circle"></div>
-                <div class="circle"></div>
-            </div>
+            <p data-aos="fade-right" class="text">Studies find that people tend to overestimate the percentage of immigrants in the US, consistently guessing:</p>
 
-            <p class="text">Studies find that people tend to overestimate the percentage of immigrants in the US, consistently guessing:</p>
-
-            <p class="text">30 – 40%</p>
-
-            <p class="text">Viewers of this project also overestimate this number.</p>
+            <p data-aos="fade-right" class="stats-p">30 – 40%</p>
 
             <button class="next">Next</button>
+
+            <div class="decorations">
+                <img src="images/blueguy2.png" width="120" id="blue2">
+                <img src="images/redguy2.png" width="80" id="red2">
+                <img src="images/yellowguy1.png" width="100" id="yellow1">
+            </div>
         </section>
 
         <section class="question-screen hidden">
             <h2>How often have you heard this claim:</h2>
-            <h1 class="claim">"Immigrants are causing an increase in crime rates in the United States"</h1>
+            <h1 class="claim">Immigrants are causing an increase in crime rates in the United States.</h1>
 
             <div class="radio-btns">
                 <div>
@@ -105,11 +125,15 @@
             <p class="error-message"></p>
             
             <button class="next">Next</button>
+
+            <div class="decorations">
+                <img src="images/redguy3.png" width="100" id="red3">
+            </div>
         </section>
 
         <section class="question-screen hidden">
             <h2>How often have you heard this claim:</h2>
-            <h1 class="claim">"Immigrants are taking jobs away from people born in the United States"</h1>
+            <h1 class="claim">Immigrants are taking jobs away from people born in the United States.</h1>
 
             <div class="radio-btns">
                 <div>
@@ -142,11 +166,15 @@
             <p class="error-message"></p>
 
             <button class="next">Next</button>
+
+            <div class="decorations">
+                <img src="images/blueguy3.png" width="100" id="blue3">
+            </div>
         </section>
 
         <section class="question-screen hidden">
             <h2>How often have you heard this claim:</h2>
-            <h1 class="claim">"Immigrants take advantage of government welfare support while not paying taxes"</h1>
+            <h1 class="claim">Immigrants take advantage of government welfare support while not paying taxes.</h1>
 
             <div class="radio-btns">
                 <div>
@@ -179,11 +207,15 @@
             <p class="error-message"></p>
 
             <button class="next">Next</button>
+
+            <div class="decorations">
+                <img src="images/yellowguy2.png" width="120" id="yellow2">
+            </div>
         </section>
 
         <section class="question-screen hidden">
             <h2>How often have you heard this claim:</h2>
-            <h1 class="claim">"It is easy to immigrate to the United States so immigrants need to just get in line"</h1>
+            <h1 class="claim">It is easy to immigrate to the United States so immigrants need to just get in line.</h1>
 
             <div class="radio-btns">
                 <div>
@@ -218,96 +250,359 @@
             <div class="submit">
                 <input type="submit" id="submit-btn">
             </div>
+
+            <div class="decorations">
+                <img src="images/redguy4.png" width="100" id="red4">
+            </div>
         </section>
 
-        <section class="question-screen stats2 hidden">
-            <h1>Most people have heard or read these kinds of false claims about immigrants</h1>
+        <section class="question-screen hidden stats2">
             
+            <h1>Most people have heard or read these kinds of false claims about immigrants, including your peers.</h1>
             <div class="chart-area">
+                <p class="loader">LOADING CHART...</p>
                 <canvas id="chart1"></canvas>
             </div>
 
+            <h1 data-aos="fade-right">So let's review the facts.</h1>
             <section class="claimSection">
-                <p class="claimHeader">Claim 1: "Immigrants are causing an increase in crime rates in the United States"</p>
-                <div class="claimResponse">
+                <p data-aos="fade-right" class="claimHeader">Claim 1:</p>
+                <p data-aos="fade-right" class="claimHeader red">Immigrants are causing an increase in crime rates in the United States.</p>
+                <div data-aos="fade-left" class="claimResponse">
                     <div>
                         <p>Multiple studies have found that there is no correlation between increased immigration and increased crime rates.</p>
                         <br>
                         <p>In fact, immigrants have never been more likely to be incarcerated than the US-born.</p>
-                        <canvas id="chart2"></canvas>
-                    </div> 
-                </div>
-            </section>
-            
-            <section class="claimSection">
-                <p class="claimHeader">Claim 2: "Immigrants are taking jobs away from people born in the United States"</p>
-                <div class="claimResponse">
-                    <div>
-                        <p>Immigrants create jobs by increasing consumer demand and starting businesses.</p>
-                        <br>
-                        <p>They fill labor shortages in manual-intensive industries such as healthcare, childcare, construction, and food services, jobs that many US-born are often unwilling to take</p>
-                    </div> 
-                </div>
-            </section>
-            
-            <section class="claimSection">
-                <p class="claimHeader">Claim 3: "Immigrants take advantage of government welfare support while not paying taxes"</p>
-                <div class="claimResponse">
-                    <div>
-                        <p>Undocumented immigrants pay billions in taxes every year while being ineligible for government welfare due to their status</p>
+                        <!-- <canvas id="chart2"></canvas> -->
                     </div> 
                 </div>
             </section>
 
             <section class="claimSection">
-                <p class="claimHeader">Claim 4: "It is easy to immigrate to the United States so immigrants need to just get in line"</p>
-                <div class="claimResponse">
+                <p data-aos="fade-right" class="claimHeader">Claim 2:</p>
+                <p data-aos="fade-right" class="claimHeader red">Immigrants are taking jobs away from people born in the United States.</p>
+                <div data-aos="fade-left" class="claimResponse">
+                    <div>
+                        <p>Immigrants create jobs by increasing consumer demand and starting businesses.</p>
+                        <br>
+                        <p>They fill labor shortages in manual-intensive industries that many US-born are often unwilling to take.</p>
+                    </div> 
+                </div>
+            </section>
+
+            <section class="claimSection">
+                <p data-aos="fade-right" class="claimHeader">Claim 3:</p>
+                <p data-aos="fade-right" class="claimHeader red">Immigrants take advantage of government welfare support while not paying taxes.</p>
+                <div data-aos="fade-left" class="claimResponse">
+                    <div>
+                        <p>Undocumented immigrants pay billions in taxes every year while being ineligible for government welfare due to their status.</p>
+                    </div> 
+                </div>
+            </section>
+
+            <section class="claimSection">
+                <p data-aos="fade-right" class="claimHeader">Claim 4:</p>
+                <p data-aos="fade-right" class="claimHeader red">It is easy to immigrate to the United States so immigrants need to just get in line.</p>
+                <div data-aos="fade-left" class="claimResponse">
                     <div>
                         <p>Is it really?</p>
                     </div> 
                 </div>
             </section>
-            
+
             <button class="next">Next</button>
         </section>
     </form>
 
     <!-- timeline -->
-    <section class="question-screen timeline">
+    <section class="question-screen hidden timeline">
         <div id="fullpage">
-            <div class="section">
-            <p>There are four ways to acquire permanent residence in the US:</p>
-            <div class="immigrationTypes">
-                <div class="card">
-                    <p>Through family</p>
-                </div>
+            <div class="section active">
+                <h1>There are four ways to acquire permanent residence in the US:</h1>
+                <div class="immigrationTypes">
+                    <div class="card">
+                        <p>THROUGH <br>FAMILY</p>
+                    </div>
 
-                <div class="card">
-                    <p>Through employment</p>
-                </div>
+                    <div class="card">
+                        <p>THROUGH EMPLOYMENT</p>
+                    </div>
 
-                <div class="card">
-                    <p>Through lottery</p>
-                </div>
+                    <div class="card">
+                        <p>THROUGH <br>LOTTERY</p>
+                    </div>
 
-                <div class="card">
-                    <p>As a refugee</p>
+                    <div class="card">
+                        <p>AS A <br>REFUGEE</p>
+                    </div>
                 </div>
-            </div>
-            </div>
-
-            <div class="section">
-                <p>A lot of people imagine the process to getting permanent residency in the US looks something like this:</p>
-                <div class="line"></div>
+                <div class="scroll-alert"><p>Scroll</p></div>
             </div>
 
             <div class="section">
-                <p>But in reality, it looks a lot more like this:</p>
-                <button class="getCard">Get Green Card Now!</button>
-                <p class="outcome">Sorry, you didn't get a green card this time. Try again next time!</p>
+                <h1>A lot of people imagine the process to getting permanent residency in the US looks something like this:</h1>
+                <div class="line-container">
+                    <div class="line"></div>
+                </div>
+                
+                <button class="outline">Get Green Card Now!</button>
+                <div class="scroll-alert"><p>Scroll</p></div>
+            </div>
+
+            <div class="section">
+                <div class="fullscreen">
+                    <h1>But in reality, it looks a lot more like this:</h1>
+                    <button class="getCard">Get Green Card Now!</button>
+                    
+                    <div class="popups" id="popGroup1">
+                        <div class="popCard" id="pop1">
+                            <div class="popHeader">
+                                <p>System Message</p>
+                            </div>
+
+                            <div class="popContent">
+                                <i class="far fa-question-circle"></i>
+                                <p>Does qualified US worker exist?</p>
+                            </div>
+
+                            <div class="popButton">
+                                <button class="closePop">Cancel</button>
+                            </div>
+                        </div>
+
+                        <div class="popCard" id="pop2">
+                            <div class="popHeader">
+                                <p>System Message</p>
+                            </div>
+
+                            <div class="popContent">
+                                <i class="far fa-question-circle"></i>
+                                <p>Did the department of labor approve labor certification?</p>
+                            </div>
+
+                            <div class="popButton">
+                                <button class="closePop">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="popups" id="popGroup2">
+                        <div class="popCard" id="pop3">
+                            <div class="popHeader">
+                                <p>System Message</p>
+                            </div>
+
+                            <div class="popContent">
+                                <i class="far fa-question-circle"></i>
+                                <p>Are you the sibling of a US citizen?</p>
+                            </div>
+
+                            <div class="popButton">
+                                <button class="closePop">Cancel</button>
+                            </div>
+                        </div>
+
+                        <div class="popCard" id="pop4">
+                            <div class="popHeader">
+                                <p>System Message</p>
+                            </div>
+
+                            <div class="popContent">
+                                <i class="far fa-question-circle"></i>
+                                <p>Did you pass US consulate visa interview?</p>
+                            </div>
+
+                            <div class="popButton">
+                                <button class="closePop">Cancel</button>
+                            </div>
+                        </div>
+
+                        <div class="popCard" id="pop5">
+                            <div class="popHeader">
+                                <p>System Message</p>
+                            </div>
+
+                            <div class="popContent">
+                                <i class="far fa-question-circle"></i>
+                                <p>Did you pass medical exam and security checks?</p>
+                            </div>
+
+                            <div class="popButton">
+                                <button class="closePop">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="popups" id="popGroup3">
+                        <div class="popCard" id="pop6">
+                            <div class="popHeader">
+                                <p>System Message</p>
+                            </div>
+
+                            <div class="popContent">
+                                <i class="far fa-question-circle"></i>
+                                <p>Did you pass USCIS security check?</p>
+                            </div>
+
+                            <div class="popButton">
+                                <button class="closePop">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="popups" id="popGroup4">
+                        <div class="popCard" id="pop7">
+                            <div class="popHeader">
+                                <p>System Message</p>
+                            </div>
+
+                            <div class="popContent">
+                                <i class="far fa-question-circle"></i>
+                                <p>Are you a refugee?</p>
+                            </div>
+
+                            <div class="popButton">
+                                <button class="closePop">Cancel</button>
+                            </div>
+                        </div>
+
+                        <div class="popCard" id="pop8">
+                            <div class="popHeader">
+                                <p>System Message</p>
+                            </div>
+
+                            <div class="popContent">
+                                <i class="far fa-question-circle"></i>
+                                <p>Did random computer-generated lottery pick you?</p>
+                            </div>
+
+                            <div class="popButton">
+                                <button class="closePop">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="popups" id="popGroup5">
+                        <div class="popCard" id="pop9">
+                            <div class="popHeader">
+                                <p>System Message</p>
+                            </div>
+
+                            <div class="popContent">
+                                <i class="far fa-question-circle"></i>
+                                <p>Are you the spouse of a US citizen?</p>
+                            </div>
+
+                            <div class="popButton">
+                                <button class="closePop">Cancel</button>
+                            </div>
+                        </div>
+
+                        <div class="popCard" id="pop10">
+                            <div class="popHeader">
+                                <p>System Message</p>
+                            </div>
+
+                            <div class="popContent">
+                                <i class="far fa-question-circle"></i>
+                                <p>Are you a criminal?</p>
+                            </div>
+
+                            <div class="popButton">
+                                <button class="closePop">Cancel</button>
+                            </div>
+                        </div>
+                        
+                        <div class="popCard" id="pop11">
+                            <div class="popHeader">
+                                <p>System Message</p>
+                            </div>
+
+                            <div class="popContent">
+                                <i class="far fa-question-circle"></i>
+                                <p>Were you previously undocumented?</p>
+                            </div>
+
+                            <div class="popButton">
+                                <button class="closePop">Cancel</button>
+                            </div>
+                        </div>
+
+                        <div class="popCard" id="pop12">
+                            <div class="popHeader">
+                                <p>System Message</p>
+                            </div>
+
+                            <div class="popContent">
+                                <i class="far fa-question-circle"></i>
+                                <p>Do you deserve to be a US citizen?</p>
+                            </div>
+
+                            <div class="popButton">
+                                <button class="closePop">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="popCard" id="pop13">
+                        <div class="popHeader">
+                            <p>System Message</p>
+                        </div>
+
+                        <div class="popContent">
+                            <i class="far fa-question-circle"></i>
+                            <p>Sorry, you didn't get a green card this time. Try again next time!</p>
+                        </div>
+
+                        <div class="popButton">
+                            <button class="closePop">Wait</button>
+                        </div>
+                    </div>
+
+                    <button class="next" id="finalNext">Next</button>
+
+                </div>
+                
             </div>
         </div>
     </section>
+
+    <!-- future -->
+    <section class="question-screen hidden future">
+        <div class="future-flex">
+            <div class="h1-flex">
+                <h1>Now, ask yourself. <br>Can you imagine a world <span class="red">without immigrants?</span></h1>
+                <h1>What about a world <span class="red">without borders?</span> <br><span class="red">without nationalism?</span></h1>
+                <h1>What kind of <span class="red">future</span> <br>would that be?</h1>
+            </div>
+            <button class="show">Tell Us</button>
+        </div>
+
+        <div class="popCard" id="tell-us-box">
+            <div class="popHeader">
+                <p>System Message</p>
+            </div>
+
+            <div class="popContent">
+                <i class="far fa-question-circle"></i>
+                <p>What is a future without nationalism? <br><span class="italicized"><em>Stuck? Tell us a story about immigrants instead. This can be anything, from their favorite songs to their dreams.</em></span></p>
+            </div>
+
+            <div class="popInput">
+                <form>
+                    <textarea id="feedback" name="user_response" rows="8" cols="40" placeholder="Type your answer here..."></textarea>
+                </form>
+                
+            </div>
+
+            <div class="popButton">
+                <button class="closePop submitText">Submit</button>
+            </div>
+        </div>
+
+        <div id="response-feed"></div>
+    </section>
+
 
 </body>
 </html>
