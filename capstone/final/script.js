@@ -155,7 +155,7 @@
         tellUsBox.style.display = 'block';
     });
     
-    //submit text areqa
+    //submit text area
     const submitTextBtn = document.querySelector('.submitText');
     const feedbackInput = document.querySelector('#feedback');
     submitTextBtn.addEventListener('click', async function(event) {

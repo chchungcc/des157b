@@ -7,6 +7,8 @@
 
 }
 
+
+
 html, body{
     overflow: auto !important;
 }
@@ -381,7 +383,7 @@ canvas{
 }
 
 .chart-area{
-    margin: 50px 0px 100px 0px;
+    margin: 50px 0px 40px 0px;
     margin-left: auto;
     width: 700px;
     border: 2px solid var(--main-black);
@@ -429,6 +431,10 @@ canvas{
     display: flex;
     justify-content: flex-end;
     margin: 0 100px;
+}
+
+.stats2 .scroll-alert{
+    margin: 0;
 }
 
 .scroll-alert p{
